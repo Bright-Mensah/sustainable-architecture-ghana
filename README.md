@@ -36,3 +36,4 @@ A 5-page responsive website exploring sustainable architecture in Ghana, blendin
 1. Clone the repository:
    ```bash
    git clone https://github.com/bright-mensah/sustainable-architecture-ghana.git
+   

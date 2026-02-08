@@ -1,4 +1,3 @@
-Student Name: [YOUR NAME HERE]
 Index No: 2425400302
 Course Title: FOUNDATIONS OF MULTIMEDIA AND WEB DESIGN
 Course Code: IT245
@@ -36,4 +35,3 @@ A 5-page responsive website exploring sustainable architecture in Ghana, blendin
 1. Clone the repository:
    ```bash
    git clone https://github.com/bright-mensah/sustainable-architecture-ghana.git
-   

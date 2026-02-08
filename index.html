@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sustainable Architecture in Ghana - Blending Tradition with Modern Design">
+    <title>EcoArch Ghana | Sustainable Architecture</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Additional styles for index page */
+        .hero {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+            margin-top: 70px;
+        }
+        
+        .hero img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.3));
+            z-index: -1;
+        }
+        
+        .hero-content {
+            color: white;
+            padding: 2rem;
+            max-width: 800px;
+            z-index: 1;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+            border: 2px solid var(--secondary-color);
+            margin-top: 2rem;
+        }
+        
+        .cta-button:hover {
+            background-color: transparent;
+            border-color: white;
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .stats-counter {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            padding: 2rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: white;
+            border-radius: 15px;
+        }
+        
+        .stat-box {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .news-highlight {
+            background: #f9f9f9;
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+        }
+        
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .news-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .news-date {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                height: 80vh;
+            }
+            
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .stats-counter {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-leaf"></i>
+                <span>EcoArch Ghana</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="traditional.html">Traditional Designs</a></li>
+                <li><a href="modern.html">Modern Innovations</a></li>
+                <li><a href="casestudies.html">Case Studies</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Sustainable Architecture in Ghana</h1>
+            <p class="subtitle">Blending Centuries-Old Traditions with Modern Eco-Friendly Design</p>
+            <a href="#features" class="cta-button">Explore Sustainable Designs</a>
+        </div>
+        <div class="hero-overlay"></div>
+        <img src="images/hero-bg.jpeg" alt="Sustainable architecture in Ghana showing modern building with green design elements">
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <!-- Introduction Section -->
+        <section class="intro-section">
+            <h2>Why Sustainable Architecture Matters in Ghana</h2>
+            <p>Ghana stands at the crossroads of tradition and innovation. Our architectural heritage, combined with modern sustainable practices, offers unique solutions for climate-responsive, culturally-sensitive, and environmentally-friendly building designs.</p>
+            
+            <div class="intro-grid">
+                <div class="intro-card">
+                    <i class="fas fa-sun"></i>
+                    <h3>Climate Responsive</h3>
+                    <p>Designs that naturally cool buildings in Ghana's tropical climate, reducing energy consumption by up to 40%.</p>
+                </div>
+                <div class="intro-card">
+                    <i class="fas fa-recycle"></i>
+                    <h3>Local Materials</h3>
+                    <p>Utilizing locally-sourced, renewable materials like bamboo, laterite, and compressed earth blocks that reduce carbon footprint by 60%.</p>
+                </div>
+                <div class="intro-card">
+                    <i class="fas fa-users"></i>
+                    <h3>Community Focused</h3>
+                    <p>Designs that respect cultural heritage while meeting modern needs of Ghanaian communities, preserving our architectural identity.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Statistics Counter -->
+        <section class="stats-counter">
+            <div class="stat-box">
+                <div class="stat-number" data-count="40">0</div>
+                <div class="stat-label">Energy Savings</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" data-count="50">0</div>
+                <div class="stat-label">Water Reduction</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" data-count="60">0</div>
+                <div class="stat-label">Carbon Reduction</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number" data-count="200">0</div>
+                <div class="stat-label">Projects Completed</div>
+            </div>
+        </section>
+
+        <!-- Featured Section -->
+        <section id="features" class="featured-section">
+            <h2>Featured Architectural Styles</h2>
+            <p>Explore the evolution of Ghanaian architecture from traditional wisdom to modern innovation.</p>
+            
+            <div class="featured-grid">
+                <article class="feature-card">
+                    <img src="images/courtyard.jpg" alt="Traditional Ashanti Compound House with courtyard" class="feature-img">
+                    <div class="feature-content">
+                        <h3>Traditional Compound Houses</h3>
+                        <p>Explore the communal living design of Ashanti compound houses with courtyards that promote social interaction and natural ventilation.</p>
+                        <a href="traditional.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <article class="feature-card">
+                    <img src="images/modern-solar.jpg" alt="Modern sustainable villa with solar panels" class="feature-img">
+                    <div class="feature-content">
+                        <h3>Modern Eco-Villas</h3>
+                        <p>Contemporary homes integrating solar power, rainwater harvesting, and passive cooling systems for energy independence.</p>
+                        <a href="modern.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <article class="feature-card">
+                    <img src="images/uni.jpg" alt="Modern university building with sustainable design" class="feature-img">
+                    <div class="feature-content">
+                        <h3>Sustainable Institutions</h3>
+                        <p>Academic and healthcare buildings designed for natural ventilation and optimal environments for learning and healing.</p>
+                        <a href="casestudies.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Interactive Gallery -->
+        <section class="gallery-section">
+            <h2>Architectural Gallery</h2>
+            <p>Browse through examples of sustainable architecture across Ghana. Filter by category to see specific styles.</p>
+            
+            <div class="gallery-controls">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="traditional">Traditional</button>
+                <button class="filter-btn" data-filter="modern">Modern</button>
+                <button class="filter-btn" data-filter="hybrid">Hybrid</button>
+            </div>
+            
+            <div class="gallery-grid">
+                <div class="gallery-item traditional">
+                    <img src="images/traditional-hut-roof.jpg" alt="Traditional thatched roof hut in rural Ghana">
+                    <div class="gallery-overlay">
+                        <p>Thatched Roof Hut - Northern Region</p>
+                    </div>
+                </div>
+                <div class="gallery-item modern">
+                    <img src="images/solar-office.jpg" alt="Modern sustainable office building in Accra">
+                    <div class="gallery-overlay">
+                        <p>Solar-Powered Office - Accra</p>
+                    </div>
+                </div>
+                <div class="gallery-item hybrid">
+                    <img src="images/modern-traditional.jpg" alt="Building combining traditional and modern elements">
+                    <div class="gallery-overlay">
+                        <p>Modern-Traditional Fusion Design</p>
+                    </div>
+                </div>
+                <div class="gallery-item traditional">
+                    <img src="images/costal-swish.jpg" alt="Traditional coastal house with swish construction">
+                    <div class="gallery-overlay">
+                        <p>Coastal Swish House - Western Region</p>
+                    </div>
+                </div>
+                <div class="gallery-item modern">
+                    <img src="images/leed-office.jpg" alt="Green office building with living walls">
+                    <div class="gallery-overlay">
+                        <p>LEED Certified Office - Kumasi</p>
+                    </div>
+                </div>
+                <div class="gallery-item hybrid">
+                    <img src="images/health-care.jpg" alt="Healthcare facility blending traditional and modern design">
+                    <div class="gallery-overlay">
+                        <p>Healthcare Center - Northern Region</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Section -->
+        <section class="video-section">
+            <h2>Watch: Sustainable Building Techniques in Ghana</h2>
+            <p>Learn from experts and see sustainable architecture in action through these informative videos.</p>
+            
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <!-- <iframe src="https://www.youtube.com/watch?v=wjJWRyEtzs8" 
+                            title="Traditional Ghanaian Architecture Documentary" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                    </iframe> -->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/wjJWRyEtzs8?si=CxD3lkpG1ewnQzmI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="video-info">
+                    <h3>Traditional Building Wisdom Meets Modern Sustainability</h3>
+                    <p>This documentary explores how ancient Ghanaian building techniques are being revived and combined with modern sustainable practices to create climate-responsive architecture.</p>
+                    <p><strong>Duration:</strong> 12:45 | <strong>Source:</strong> Ghana Architectural Heritage Project</p>
+                </div>
+            </div>
+            
+            <div class="news-grid" style="margin-top: 3rem;">
+                <div class="news-item">
+                    <div class="news-date">March 15, 2025</div>
+                    <h4>Solar Energy Adoption Grows 300%</h4>
+                    <p>Ghana sees unprecedented growth in residential solar installations, driven by new government incentives and falling technology costs.</p>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">February 28, 2025</div>
+                    <h4>New Green Building Standards</h4>
+                    <p>Ghana Green Building Council announces updated sustainability standards for all new commercial constructions starting June 2025.</p>
+                </div>
+                <div class="news-item">
+                    <div class="news-date">January 10, 2025</div>
+                    <h4>Traditional Techniques Revival</h4>
+                    <p>Architects are increasingly incorporating traditional ventilation systems into modern designs, reducing AC dependency by up to 70%.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="news-highlight">
+            <h2>Start Your Sustainable Journey</h2>
+            <p>Whether you're planning a new building, renovating an existing one, or just learning about sustainable architecture, we have resources for you.</p>
+            
+            <div class="intro-grid" style="margin-top: 2rem;">
+                <div class="intro-card">
+                    <i class="fas fa-download"></i>
+                    <h3>Download Resources</h3>
+                    <p>Get free guides, checklists, and templates for sustainable building in Ghana.</p>
+                    <a href="resources.html" class="read-more" style="margin-top: 1rem;">Get Resources</a>
+                </div>
+                <div class="intro-card">
+                    <i class="fas fa-book-open"></i>
+                    <h3>Learn from Cases</h3>
+                    <p>Study real-world examples of successful sustainable architecture projects.</p>
+                    <a href="casestudies.html" class="read-more" style="margin-top: 1rem;">View Cases</a>
+                </div>
+                <div class="intro-card">
+                    <i class="fas fa-question-circle"></i>
+                    <h3>Get Answers</h3>
+                    <p>Find answers to frequently asked questions about sustainable building.</p>
+                    <a href="resources.html#faq" class="read-more" style="margin-top: 1rem;">Read FAQ</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>EcoArch Ghana</h3>
+                    <p>Promoting sustainable architectural practices that honor Ghana's heritage while embracing the future. A project for IT245 - Foundations of Multimedia and Web Design.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="traditional.html">Traditional Designs</a></li>
+                        <li><a href="modern.html">Modern Innovations</a></li>
+                        <li><a href="casestudies.html">Case Studies</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Academic Information</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-university"></i> Ghana Communication Technology University</li>
+                        <li><i class="fas fa-graduation-cap"></i> Faculty of Computing and Information Systems</li>
+                        <li><i class="fas fa-book"></i> IT245: Multimedia & Web Design</li>
+                        <li><i class="fas fa-calendar"></i> First Semester 2025-2026</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> EcoArch Ghana. IT245 Multimedia & Web Design Project. All rights reserved.</p>
+                <p>This website is an academic project for Ghana Communication Technology University. All images are from free stock sources and used for educational purposes.</p>
+                <p>Project by: [Your Name/Student ID] | Submitted to: [Lecturer's Name]</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Case Studies - Real-world sustainable architecture projects in Ghana">
+    <title>Case Studies | EcoArch Ghana</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Simple Case Studies Styles */
+        .page-header {
+            background: linear-gradient(rgba(46, 139, 87, 0.8), rgba(46, 139, 87, 0.6)),
+                        url('../images/casestudies/header-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 8rem 0 4rem;
+            margin-top: 70px;
+        }
+        
+        .page-subtitle {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+        }
+        
+        .case-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .case-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .case-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .case-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .case-content {
+            padding: 1.5rem;
+        }
+        
+        .case-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .tag {
+            background: #f0f9f0;
+            color: var(--primary-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+        
+        .case-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f9f9f9;
+            border-radius: 8px;
+        }
+        
+        .stat {
+            text-align: center;
+        }
+        
+        .stat-value {
+            display: block;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        .project-details {
+            margin: 2rem 0;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .detail-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        
+        .before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .comparison-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        .comparison-label {
+            text-align: center;
+            margin-top: 1rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .testimonial {
+            background: linear-gradient(135deg, #f0f9f0, #e0f2e0);
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            position: relative;
+        }
+        
+        .testimonial:before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--primary-color);
+            opacity: 0.2;
+            font-family: serif;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .author-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        
+        .lesson-learned {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .lesson-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        @media (max-width: 768px) {
+            .before-after {
+                grid-template-columns: 1fr;
+            }
+            
+            .case-stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-leaf"></i>
+                <span>EcoArch Ghana</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="traditional.html">Traditional Designs</a></li>
+                <li><a href="modern.html">Modern Innovations</a></li>
+                <li><a href="casestudies.html" class="active">Case Studies</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Case Studies</h1>
+            <p class="page-subtitle">Real-World Sustainable Architecture Projects in Ghana</p>
+            <p style="color: lightgoldenrodyellow;">Exploring successful implementations of green building practices across different regions</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Introduction -->
+        <section class="intro-section">
+            <h2>Successful Projects Across Ghana</h2>
+            <p>These case studies demonstrate how sustainable architecture principles have been successfully applied in various Ghanaian contexts, from urban centers to rural communities.</p>
+        </section>
+
+        <!-- Case Study Grid -->
+        <section class="cases-section">
+            <h2>Featured Projects</h2>
+            <div class="case-grid">
+                
+                <!-- Case Study 1 -->
+                <article class="case-card">
+                    <img src="images/accra-solar.jpg" alt="Accra Solar Residence" class="case-image">
+                    <div class="case-content">
+                        <h3>Accra Solar Residence</h3>
+                        <p>A modern family home achieving net-zero energy through integrated solar systems and passive design.</p>
+                        
+                        <div class="case-tags">
+                            <span class="tag">Residential</span>
+                            <span class="tag">Solar Power</span>
+                            <span class="tag">Net-Zero</span>
+                            <span class="tag">Urban</span>
+                        </div>
+                        
+                        <div class="case-stats">
+                            <div class="stat">
+                                <span class="stat-value">100%</span>
+                                <span class="stat-label">Renewable</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">₵1500</span>
+                                <span class="stat-label">Monthly Savings</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">5 yrs</span>
+                                <span class="stat-label">ROI</span>
+                            </div>
+                        </div>
+                        
+                        <button class="read-more" onclick="showDetails('case1')">
+                            View Details <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+                
+                <!-- Case Study 2 -->
+                <article class="case-card">
+                    <img src="images/kumasi-green.jpg" alt="Kumasi Green School" class="case-image">
+                    <div class="case-content">
+                        <h3>Kumasi Green School</h3>
+                        <p>Educational facility using natural ventilation, rainwater harvesting, and recycled materials.</p>
+                        
+                        <div class="case-tags">
+                            <span class="tag">Educational</span>
+                            <span class="tag">Rainwater</span>
+                            <span class="tag">Natural Ventilation</span>
+                            <span class="tag">Community</span>
+                        </div>
+                        
+                        <div class="case-stats">
+                            <div class="stat">
+                                <span class="stat-value">60%</span>
+                                <span class="stat-label">Water Savings</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">40%</span>
+                                <span class="stat-label">Energy Savings</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">₵0.5M</span>
+                                <span class="stat-label">Cost Saved</span>
+                            </div>
+                        </div>
+                        
+                        <button class="read-more" onclick="showDetails('case2')">
+                            View Details <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+                
+                <!-- Case Study 3 -->
+                <article class="case-card">
+                    <img src="images/health-care.jpg" alt="Northern Health Clinic" class="case-image">
+                    <div class="case-content">
+                        <h3>Northern Health Clinic</h3>
+                        <p>Healthcare facility combining traditional building techniques with modern medical requirements.</p>
+                        
+                        <div class="case-tags">
+                            <span class="tag">Healthcare</span>
+                            <span class="tag">Traditional</span>
+                            <span class="tag">Modern</span>
+                            <span class="tag">Rural</span>
+                        </div>
+                        
+                        <div class="case-stats">
+                            <div class="stat">
+                                <span class="stat-value">90%</span>
+                                <span class="stat-label">Local Materials</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">50%</span>
+                                <span class="stat-label">Cooler Inside</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-value">₵300K</span>
+                                <span class="stat-label">Under Budget</span>
+                            </div>
+                        </div>
+                        
+                        <button class="read-more" onclick="showDetails('case3')">
+                            View Details <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Detailed Case Study View -->
+        <section id="caseDetails" class="details-section" style="display: none;">
+            <button class="back-btn" onclick="hideDetails()" style="margin-bottom: 2rem;">
+                <i class="fas fa-arrow-left"></i> Back to Cases
+            </button>
+            
+            <div id="caseContent">
+                <!-- Content will be loaded here -->
+            </div>
+        </section>
+
+        <!-- Lessons Learned -->
+        <section class="lessons-section">
+            <h2>Key Lessons Learned</h2>
+            <p>From these projects, several important lessons have emerged that can guide future sustainable architecture in Ghana:</p>
+            
+            <div class="lesson-learned">
+                <div class="lesson-title">
+                    <i class="fas fa-sun"></i>
+                    <h4>Lesson 1: Site Orientation is Critical</h4>
+                </div>
+                <p>Proper building orientation can reduce cooling needs by up to 30%. East-west orientation with strategic shading works best for Ghana's climate.</p>
+            </div>
+            
+            <div class="lesson-learned">
+                <div class="lesson-title">
+                    <i class="fas fa-users"></i>
+                    <h4>Lesson 2: Community Involvement Matters</h4>
+                </div>
+                <p>Projects with strong community participation have higher adoption rates and better long-term maintenance.</p>
+            </div>
+            
+            <div class="lesson-learned">
+                <div class="lesson-title">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h4>Lesson 3: Initial Costs ≠ Long-Term Costs</h4>
+                </div>
+                <p>While sustainable features may increase upfront costs by 5-15%, they typically pay back within 3-7 years through energy and water savings.</p>
+            </div>
+            
+            <div class="lesson-learned">
+                <div class="lesson-title">
+                    <i class="fas fa-recycle"></i>
+                    <h4>Lesson 4: Local Materials Work Best</h4>
+                </div>
+                <p>Locally-sourced materials like compressed earth blocks and bamboo perform better in Ghana's climate than imported alternatives.</p>
+            </div>
+        </section>
+
+        <!-- Project Map -->
+        <section class="map-section">
+            <h2>Project Locations</h2>
+            <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: var(--shadow);">
+                <div style="text-align: center; margin-bottom: 1rem;">
+                    <i class="fas fa-map-marker-alt" style="color: var(--primary-color); font-size: 2rem;"></i>
+                    <h3>Projects Across Ghana</h3>
+                </div>
+                
+                <div style="background: #f9f9f9; padding: 1rem; border-radius: 8px; margin-bottom: 1rem;">
+                    <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                        <div style="width: 20px; height: 20px; background: #2E8B57; border-radius: 50%; margin-right: 10px;"></div>
+                        <span><strong>Accra:</strong> 5 major projects</span>
+                    </div>
+                    <div style="display: flex; align-items: center; margin-bottom: 0.5rem;">
+                        <div style="width: 20px; height: 20px; background: #D4AF37; border-radius: 50%; margin-right: 10px;"></div>
+                        <span><strong>Kumasi:</strong> 3 educational projects</span>
+                    </div>
+                    <div style="display: flex; align-items: center;">
+                        <div style="width: 20px; height: 20px; background: #1A472A; border-radius: 50%; margin-right: 10px;"></div>
+                        <span><strong>Northern Region:</strong> 4 rural projects</span>
+                    </div>
+                </div>
+                
+                <p style="text-align: center; color: var(--text-light);">
+                    <i class="fas fa-info-circle"></i>
+                    Sustainable architecture projects are growing across all regions of Ghana
+                </p>
+            </div>
+        </section>
+
+        <!-- Testimonial -->
+        <section class="testimonial-section">
+            <h2>What People Say</h2>
+            <div class="testimonial">
+                <p class="testimonial-text">
+                    "The sustainable features in our school have not only reduced our utility bills by 40% but have created a healthier learning environment for our students. The natural lighting and ventilation have made a noticeable difference in student concentration."
+                </p>
+                <div class="testimonial-author">
+                    <!-- <img src="images/casestudies/testimonial-1.jpg" alt="School Principal" class="author-avatar"> -->
+                    <div>
+                        <h4>Mr. Kwame Asante</h4>
+                        <p>Principal, Kumasi Green School</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation to Other Pages -->
+        <section class="page-navigation">
+            <h2>Continue Exploring</h2>
+            <div class="nav-buttons">
+                <a href="modern.html" class="nav-button">
+                    <i class="fas fa-solar-panel"></i>
+                    <span>Modern Innovations</span>
+                </a>
+                <a href="resources.html" class="nav-button">
+                    <i class="fas fa-book"></i>
+                    <span>Resources</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>EcoArch Ghana</h3>
+                    <p>Documenting real-world success stories of sustainable architecture in Ghana.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="traditional.html">Traditional Designs</a></li>
+                        <li><a href="modern.html">Modern Innovations</a></li>
+                        <li><a href="casestudies.html">Case Studies</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Tesano, Accra, Ghana</li>
+                        <li><i class="fas fa-phone"></i> +233 24 123 4567</li>
+                        <li><i class="fas fa-envelope"></i> info@ecoarchghana.org</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> EcoArch Ghana. IT245 Multimedia & Web Design Project. All rights reserved.</p>
+                <p>Ghana Communication Technology University | Faculty of Computing and Information Systems</p>
+                <p>Case study data compiled from project reports and interviews with stakeholders.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Simple JavaScript for case studies
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Case study data
+            const caseStudies = {
+                case1: {
+                    title: "Accra Solar Residence",
+                    image: "images/casestudies/accra-residence-detail.jpg",
+                    location: "East Legon, Accra",
+                    year: "2023",
+                    architect: "Green Design Associates",
+                    description: "This family home demonstrates how net-zero energy living is achievable in urban Ghana. The project combines cutting-edge solar technology with traditional passive cooling techniques.",
+                    features: [
+                        "10kW solar panel system with battery storage",
+                        "Rainwater harvesting (20,000L capacity)",
+                        "Green roof for insulation and biodiversity",
+                        "Cross-ventilation design reducing AC use by 80%",
+                        "Locally-sourced materials (85% local content)"
+                    ],
+                    results: [
+                        "100% energy self-sufficient",
+                        "40% reduction in water bills",
+                        "₵1,500 monthly savings on utilities",
+                        "5-year return on investment",
+                        "Reduced carbon footprint by 12 tons annually"
+                    ],
+                    testimonial: "Our electricity bills have disappeared! The solar system produces more than we need."
+                },
+                
+                case2: {
+                    title: "Kumasi Green School",
+                    image: "images/casestudies/kumasi-school-detail.jpg",
+                    location: "Asokwa, Kumasi",
+                    year: "2022",
+                    architect: "EduBuild Architects",
+                    description: "A public primary school demonstrating how sustainable design can improve educational outcomes while reducing operational costs.",
+                    features: [
+                        "Natural ventilation system eliminating need for fans",
+                        "Rainwater collection for toilets and irrigation",
+                        "Recycled plastic bottle bricks for walls",
+                        "Solar-powered computer lab",
+                        "Outdoor classrooms with natural shading"
+                    ],
+                    results: [
+                        "60% reduction in water consumption",
+                        "40% energy savings compared to conventional schools",
+                        "Improved student attendance and performance",
+                        "₵500,000 saved in construction costs",
+                        "Model for 5 other schools in the region"
+                    ],
+                    testimonial: "The natural light and fresh air have transformed our learning environment."
+                },
+                
+                case3: {
+                    title: "Northern Health Clinic",
+                    image: "images/casestudies/northern-clinic-detail.jpg",
+                    location: "Tamale, Northern Region",
+                    year: "2021",
+                    architect: "Community Health Builders",
+                    description: "A rural health clinic combining traditional building wisdom with modern medical requirements, built with community participation.",
+                    features: [
+                        "Compressed earth block walls for natural cooling",
+                        "Thatched roof for insulation",
+                        "Solar-powered medical equipment",
+                        "Gravity-fed water system",
+                        "Traditional courtyard design for patient comfort"
+                    ],
+                    results: [
+                        "Indoor temperatures 5-8°C cooler than outside",
+                        "90% of materials sourced within 50km",
+                        "Construction completed ₵300,000 under budget",
+                        "Serves 5,000+ patients annually",
+                        "Created 35 local jobs during construction"
+                    ],
+                    testimonial: "Patients recover faster in this cool, natural environment compared to conventional clinics."
+                }
+            };
+            
+            // Show case study details
+            window.showDetails = function(caseId) {
+                const caseData = caseStudies[caseId];
+                const detailsSection = document.getElementById('caseDetails');
+                const caseContent = document.getElementById('caseContent');
+                
+                // Hide case grid, show details
+                document.querySelector('.cases-section').style.display = 'none';
+                detailsSection.style.display = 'block';
+                
+                // Populate content
+                caseContent.innerHTML = `
+                    <div class="project-details">
+                        <h2>${caseData.title}</h2>
+                        <p><strong>Location:</strong> ${caseData.location} | <strong>Year:</strong> ${caseData.year} | <strong>Architect:</strong> ${caseData.architect}</p>
+                        
+                        <img src="${caseData.image}" alt="${caseData.title}" style="width: 100%; height: 400px; object-fit: cover; border-radius: 10px; margin: 2rem 0;">
+                        
+                        <p style="font-size: 1.1rem; line-height: 1.8;">${caseData.description}</p>
+                        
+                        <div class="details-grid">
+                            <div>
+                                <h3><i class="fas fa-star" style="color: var(--secondary-color);"></i> Key Features</h3>
+                                <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+                                    ${caseData.features.map(feature => `<li style="margin-bottom: 0.5rem;">${feature}</li>`).join('')}
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h3><i class="fas fa-chart-line" style="color: var(--primary-color);"></i> Results Achieved</h3>
+                                <ul style="margin-top: 1rem; padding-left: 1.5rem;">
+                                    ${caseData.results.map(result => `<li style="margin-bottom: 0.5rem;">${result}</li>`).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial" style="margin-top: 2rem;">
+                            <p class="testimonial-text">"${caseData.testimonial}"</p>
+                        </div>
+                    </div>
+                `;
+                
+                // Scroll to top of details
+                window.scrollTo({ top: detailsSection.offsetTop - 100, behavior: 'smooth' });
+            };
+            
+            // Hide details
+            window.hideDetails = function() {
+                document.querySelector('.cases-section').style.display = 'block';
+                document.getElementById('caseDetails').style.display = 'none';
+                window.scrollTo({ top: document.querySelector('.cases-section').offsetTop - 100, behavior: 'smooth' });
+            };
+            
+            // Back button styles
+            const style = document.createElement('style');
+            style.textContent = `
+                .back-btn {
+                    background: var(--primary-color);
+                    color: white;
+                    border: none;
+                    padding: 0.8rem 1.5rem;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-weight: 600;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    transition: all 0.3s ease;
+                }
+                
+                .back-btn:hover {
+                    background: var(--dark-color);
+                    transform: translateX(-5px);
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>

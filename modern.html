@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Modern Sustainable Architecture in Ghana - Green buildings, renewable energy, and eco-friendly designs">
+    <title>Modern Innovations | EcoArch Ghana</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="./css/modern.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-leaf"></i>
+                <span>EcoArch Ghana</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="traditional.html">Traditional Designs</a></li>
+                <li><a href="modern.html" class="active">Modern Innovations</a></li>
+                <li><a href="casestudies.html">Case Studies</a></li>
+                <li><a href="resources.html">Resources</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Modern Sustainable Architecture</h1>
+            <p class="page-subtitle">Innovative Green Building Technologies in Ghana</p>
+            <p style="color: lightgoldenrodyellow;">Discover how contemporary architects are combining cutting-edge technology with traditional wisdom</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Introduction -->
+        <section class="intro-section">
+            <h2>The Future of Ghanaian Architecture</h2>
+            <p>Modern sustainable architecture in Ghana represents a fusion of international green building standards with locally-adapted solutions. These innovative approaches address Ghana's unique climate challenges while reducing environmental impact.</p>
+            
+            <div class="tech-stats">
+                <div class="stat-item">
+                    <span class="stat-value" id="energySavings">40%</span>
+                    <span class="stat-label">Energy Savings</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="waterReduction">50%</span>
+                    <span class="stat-label">Water Reduction</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="carbonReduction">60%</span>
+                    <span class="stat-label">Carbon Reduction</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Green Technologies -->
+        <section class="technologies-section">
+            <h2>Key Green Technologies</h2>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-solar-panel"></i>
+                    </div>
+                    <div class="tech-content">
+                        <h3>Solar Energy Systems</h3>
+                        <p>Photovoltaic panels and solar water heaters harnessing Ghana's abundant sunlight for clean energy.</p>
+                        <div class="tech-details">
+                            <p><strong>Typical Output:</strong> 3-5 kWh/day per m²</p>
+                            <p><strong>Payback Period:</strong> 3-5 years</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <div class="tech-content">
+                        <h3>Rainwater Harvesting</h3>
+                        <p>Integrated systems for collecting, filtering, and storing rainwater for domestic use and irrigation.</p>
+                        <div class="tech-details">
+                            <p><strong>Collection Efficiency:</strong> 80-90%</p>
+                            <p><strong>Typical Storage:</strong> 5,000-20,000 liters</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-wind"></i>
+                    </div>
+                    <div class="tech-content">
+                        <h3>Passive Cooling</h3>
+                        <p>Natural ventilation systems, thermal mass, and strategic shading to reduce mechanical cooling needs.</p>
+                        <div class="tech-details">
+                            <p><strong>Temperature Reduction:</strong> 4-8°C</p>
+                            <p><strong>Energy Savings:</strong> 30-50%</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="tech-card">
+                    <div class="tech-icon">
+                        <i class="fas fa-recycle"></i>
+                    </div>
+                    <div class="tech-content">
+                        <h3>Smart Materials</h3>
+                        <p>Locally-sourced sustainable materials like bamboo composites and recycled plastic bricks.</p>
+                        <div class="tech-details">
+                            <p><strong>Embodied Energy:</strong> 40-60% lower</p>
+                            <p><strong>Local Content:</strong> 70-90%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Showcase Slider -->
+        <section class="showcase-section">
+            <h2>Featured Sustainable Projects</h2>
+            <div class="project-showcase">
+                <div class="project-slider">
+                    <div class="slides-container" id="slidesContainer">
+                        <div class="slide">
+                            <img src="images/modern.jpg" alt="Solar-Powered Residence" class="slide-img">
+                            <div class="slide-content">
+                                <h3>Accra Solar Residence</h3>
+                                <p>Net-zero energy home with integrated photovoltaic roof tiles and battery storage</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="images/kumais-green.jpg" alt="Green Office Building" class="slide-img">
+                            <div class="slide-content">
+                                <h3>Kumasi Green Office Complex</h3>
+                                <p>LEED Platinum certified building with living walls and greywater recycling</p>
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <img src="images/tak.jpg" alt="Eco School" class="slide-img">
+                            <div class="slide-content">
+                                <h3>Takoradi Eco-School</h3>
+                                <p>Educational facility using passive design and renewable materials</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="slider-controls">
+                        <button class="slider-btn prev-btn">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="slider-btn next-btn">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="slide-indicators" id="slideIndicators">
+                        <!-- Indicators will be generated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Energy Savings Calculator -->
+        <section class="calculator-section">
+            <h2>Energy Savings Calculator</h2>
+            <p>Estimate potential savings from adopting sustainable building practices:</p>
+            
+            <div class="energy-calculator">
+                <div class="calculator-form">
+                    <div class="form-group">
+                        <label for="buildingType">Building Type</label>
+                        <select id="buildingType">
+                            <option value="residential">Residential Home</option>
+                            <option value="office">Office Building</option>
+                            <option value="commercial">Commercial Space</option>
+                            <option value="institutional">Institutional Building</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="buildingSize">Building Size (m²)</label>
+                        <input type="number" id="buildingSize" min="50" max="10000" value="200" step="10">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="currentEnergy">Current Energy Use (kWh/month)</label>
+                        <input type="number" id="currentEnergy" min="100" max="100000" value="2000">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="measures">Sustainable Measures</label>
+                        <select id="measures" multiple size="4">
+                            <option value="solar">Solar Panels</option>
+                            <option value="insulation">Improved Insulation</option>
+                            <option value="water">Water Harvesting</option>
+                            <option value="ventilation">Natural Ventilation</option>
+                        </select>
+                        <small>Hold Ctrl to select multiple</small>
+                    </div>
+                    
+                    <button class="calculate-btn" id="calculateBtn">
+                        Calculate Savings
+                    </button>
+                </div>
+                
+                <div class="results-panel" id="resultsPanel">
+                    <h3>Estimated Savings</h3>
+                    <div class="comparison-chart">
+                        <div class="chart-item">
+                            <h4>Energy Savings</h4>
+                            <div class="chart-bar">
+                                <div class="chart-fill" id="energyBar" style="width: 0%"></div>
+                            </div>
+                            <p><span id="energyPercent">0%</span> reduction in energy consumption</p>
+                        </div>
+                        
+                        <div class="chart-item">
+                            <h4>Cost Savings</h4>
+                            <div class="chart-bar">
+                                <div class="chart-fill" id="costBar" style="width: 0%"></div>
+                            </div>
+                            <p>₵ <span id="costAmount">0</span> monthly savings</p>
+                        </div>
+                    </div>
+                    
+                    <div class="benefit-grid">
+                        <div class="benefit-card">
+                            <i class="fas fa-bolt"></i>
+                            <h5>Annual Energy</h5>
+                            <p><span id="annualEnergy">0</span> kWh saved</p>
+                        </div>
+                        <div class="benefit-card">
+                            <i class="fas fa-tree"></i>
+                            <h5>Carbon Reduction</h5>
+                            <p><span id="carbonSaved">0</span> kg CO₂/year</p>
+                        </div>
+                        <div class="benefit-card">
+                            <i class="fas fa-coins"></i>
+                            <h5>Return on Investment</h5>
+                            <p><span id="roiYears">0</span> years</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+     
+
+        <!-- Innovations Timeline -->
+        <section class="timeline-section">
+            <h2>Timeline of Green Innovations</h2>
+            <div class="innovations-timeline">
+                <div class="timeline-line"></div>
+                
+                <div class="innovation-item">
+                    <div class="innovation-point"></div>
+                    <h3>2005-2010</h3>
+                    <p><strong>Early Adoption:</strong> Introduction of basic solar water heaters and rainwater harvesting in premium residential projects.</p>
+                </div>
+                
+                <div class="innovation-item">
+                    <div class="innovation-point"></div>
+                    <h3>2011-2015</h3>
+                    <p><strong>Policy Development:</strong> Ghana Green Building Council established. First LEED-certified buildings completed.</p>
+                </div>
+                
+                <div class="innovation-item">
+                    <div class="innovation-point"></div>
+                    <h3>2016-2020</h3>
+                    <p><strong>Technology Integration:</strong> Smart home systems, advanced PV systems, and green building materials become more accessible.</p>
+                </div>
+                
+                <div class="innovation-item">
+                    <div class="innovation-point"></div>
+                    <h3>2021-Present</h3>
+                    <p><strong>Mainstream Adoption:</strong> Net-zero energy buildings, circular economy principles, and AI-driven energy management systems.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cost-Benefit Analysis -->
+        <section class="cost-benefit">
+            <h2>Economic Benefits of Green Buildings</h2>
+            <p>Sustainable architecture isn't just good for the environment—it makes economic sense too:</p>
+            
+            <div class="benefit-grid">
+                <div class="benefit-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Higher Property Values</h4>
+                    <p>Green buildings command 5-15% higher market values and rental rates</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="fas fa-user-check"></i>
+                    <h4>Improved Occupant Health</h4>
+                    <p>Better indoor air quality leads to 10-20% fewer sick days</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="fas fa-bolt"></i>
+                    <h4>Reduced Operating Costs</h4>
+                    <p>Energy savings of 25-50% and water savings of 30-50%</p>
+                </div>
+                
+                <div class="benefit-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Future-Proof Investment</h4>
+                    <p>Compliance with evolving environmental regulations and standards</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal for Video Player -->
+        <div class="modal" id="videoModal">
+            <button class="close-modal" id="closeModal">&times;</button>
+            <div class="modal-content">
+                <div class="video-container" id="modalVideoContainer">
+                    <!-- Video will be loaded here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation to Other Pages -->
+        <section class="page-navigation">
+            <h2>Continue Exploring</h2>
+            <div class="nav-buttons">
+                <a href="traditional.html" class="nav-button">
+                    <i class="fas fa-history"></i>
+                    <span>Traditional Designs</span>
+                </a>
+                <a href="casestudies.html" class="nav-button">
+                    <i class="fas fa-building"></i>
+                    <span>Case Studies</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>EcoArch Ghana</h3>
+                    <p>Promoting modern sustainable architecture that combines innovation with environmental responsibility.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="traditional.html">Traditional Designs</a></li>
+                        <li><a href="modern.html">Modern Innovations</a></li>
+                        <li><a href="casestudies.html">Case Studies</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Tesano, Accra, Ghana</li>
+                        <li><i class="fas fa-phone"></i> +233 24 123 4567</li>
+                        <li><i class="fas fa-envelope"></i> info@ecoarchghana.org</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> EcoArch Ghana. IT245 Multimedia & Web Design Project. All rights reserved.</p>
+                <p>Ghana Communication Technology University | Faculty of Computing and Information Systems</p>
+                <p>Sources: Ghana Green Building Council, Energy Commission Ghana, World Green Building Council</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/modernscript.js"></script>
+</body>
+</html>

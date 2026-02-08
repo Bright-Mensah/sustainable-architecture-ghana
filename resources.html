@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Resources for Sustainable Architecture in Ghana - Guides, Tools, and Learning Materials">
+    <title>Resources | EcoArch Ghana</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Resources Page Styles */
+        .page-header {
+            background: linear-gradient(rgba(42, 157, 143, 0.8), rgba(42, 157, 143, 0.6)),
+                        url('../images/resources/header-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 8rem 0 4rem;
+            margin-top: 70px;
+        }
+        
+        .page-subtitle {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 2rem;
+        }
+        
+        .resources-intro {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .resource-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .category-card {
+            background: white;
+            border-radius: 10px;
+            padding: 2rem;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .category-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .resource-list {
+            list-style: none;
+            padding: 0;
+            margin: 1.5rem 0;
+        }
+        
+        .resource-item {
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .resource-item:last-child {
+            border-bottom: none;
+        }
+        
+        .resource-link {
+            color: var(--dark-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.3s ease;
+        }
+        
+        .resource-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .resource-link i {
+            color: var(--primary-color);
+        }
+        
+        .download-section {
+            background: linear-gradient(135deg, #f0f9f0, #e0f2e0);
+            padding: 3rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+        }
+        
+        .download-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .download-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow);
+        }
+        
+        .download-icon {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            background: var(--dark-color);
+            transform: translateY(-3px);
+        }
+        
+        .contact-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            margin: 3rem 0;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+        
+        .submit-btn {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .submit-btn:hover {
+            background: var(--dark-color);
+            transform: translateY(-3px);
+        }
+        
+        .faq-section {
+            margin: 3rem 0;
+        }
+        
+        .faq-item {
+            background: white;
+            margin-bottom: 1rem;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .faq-question {
+            padding: 1.5rem;
+            background: #f9f9f9;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+        }
+        
+        .faq-answer {
+            padding: 0 1.5rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-answer.active {
+            padding: 1.5rem;
+            max-height: 500px;
+        }
+        
+        .newsletter {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            color: white;
+            padding: 3rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 3rem 0;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            max-width: 500px;
+            margin: 2rem auto;
+        }
+        
+        .newsletter-input {
+            flex: 1;
+            padding: 0.8rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .newsletter-btn {
+            background: var(--secondary-color);
+            color: var(--dark-color);
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .newsletter-btn:hover {
+            background: white;
+            transform: translateY(-3px);
+        }
+        
+        .resource-type {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-left: auto;
+            padding: 0.2rem 0.6rem;
+            background: #f0f0f0;
+            border-radius: 3px;
+        }
+        
+        @media (max-width: 768px) {
+            .newsletter-form {
+                flex-direction: column;
+            }
+            
+            .download-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-leaf"></i>
+                <span>EcoArch Ghana</span>
+            </a>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="traditional.html">Traditional Designs</a></li>
+                <li><a href="modern.html">Modern Innovations</a></li>
+                <li><a href="casestudies.html">Case Studies</a></li>
+                <li><a href="resources.html" class="active">Resources</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Resources & Tools</h1>
+            <p class="page-subtitle">Everything You Need for Sustainable Building in Ghana</p>
+            <p>Guides, calculators, templates, and learning materials for architects, builders, and homeowners</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Introduction -->
+        <section class="resources-intro">
+            <h2>Your Sustainable Architecture Toolkit</h2>
+            <p>This comprehensive resource section provides practical tools, guides, and information to help you implement sustainable architecture practices in Ghana. Whether you're a professional architect, a student, or a homeowner, you'll find valuable resources here.</p>
+        </section>
+
+        <!-- Resource Categories -->
+        <section class="categories-section">
+            <h2>Resource Categories</h2>
+            <div class="resource-categories">
+                
+                <!-- Category 1: Design Guides -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-ruler-combined"></i>
+                    </div>
+                    <h3>Design Guides & Standards</h3>
+                    <p>Official guidelines and best practices for sustainable design in Ghana</p>
+                    
+                    <ul class="resource-list">
+                        <li class="resource-item">
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-file-pdf"></i>
+                                Ghana Green Building Guidelines 2024
+                                <span class="resource-type">PDF</span>
+                            </a>
+                        </li>
+                        <li class="resource-item">
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-book"></i>
+                                Passive Design Handbook for Tropical Climates
+                                <span class="resource-type">E-book</span>
+                            </a>
+                        </li>
+                        <li class="resource-item">
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-clipboard-check"></i>
+                                Sustainable Materials Specification Guide
+                                <span class="resource-type">Checklist</span>
+                            </a>
+                        </li>
+                        <li class="resource-item">
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-drafting-compass"></i>
+                                Architectural Drawing Templates
+                                <span class="resource-type">CAD</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Category 2: Technical Tools -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3>Technical Tools & Calculators</h3>
+                    <p>Practical tools for calculations, simulations, and analysis</p>
+                    
+                    <ul class="resource-list">
+                        <li class="resource-item">
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-calculator"></i>
+                                Solar System Sizing Calculator
+                                <span class="resource-type">Web Tool</span>
+                            </a>
+                        </li>
+                        <li class="resource-item">
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-tint"></i>
+                                Rainwater Harvesting Calculator
+                                <span class="resource-type">Excel</span>
+                            </a>
+                        </li>
+                        <li class="resource-item">
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-wind"></i>
+                                Natural Ventilation Design Tool
+                                <span class="resource-type">Web App</span>
+                            </a>
+                        </li>
+                        <li class="resource-item">
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-leaf"></i>
+                                Carbon Footprint Calculator
+                                <span class="resource-type">Spreadsheet</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Category 3: Learning Materials -->
+                <div class="category-card">
+                    <div class="category-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3>Learning & Education</h3>
+                    <p>Courses, tutorials, and educational materials for all levels</p>
+                    
+                    <ul class="resource-list">
+                        <li class="resource-item">
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-video"></i>
+                                Sustainable Architecture Video Course
+                                <span class="resource-type">Video Series</span>
+                            </a>
+                        </li>
+                        <li class="resource-item">
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-podcast"></i>
+                                Green Building Podcast Series
+                                <span class="resource-type">Audio</span>
+                            </a>
+                        </li>
+                        <li class="resource-item">
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-presentation"></i>
+                                Academic Presentation Templates
+                                <span class="resource-type">PPT</span>
+                            </a>
+                        </li>
+                        <li class="resource-item">
+                            <a href="#" class="resource-link">
+                                <i class="fas fa-question-circle"></i>
+                                FAQ: Sustainable Building in Ghana
+                                <span class="resource-type">Web Page</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Download Section -->
+        <section class="download-section">
+            <h2>Free Downloads</h2>
+            <p>Download these free resources to get started with sustainable building</p>
+            
+            <div class="download-grid">
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-clipboard-list"></i>
+                    </div>
+                    <h4>Sustainability Checklist</h4>
+                    <p>A comprehensive checklist for evaluating building sustainability</p>
+                    <a href="downloads/sustainability-checklist.pdf" class="download-btn" download>
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                </div>
+                
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h4>Solar Installation Guide</h4>
+                    <p>Step-by-step guide for residential solar installations in Ghana</p>
+                    <a href="downloads/solar-guide.pdf" class="download-btn" download>
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                </div>
+                
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h4>Green Materials Directory</h4>
+                    <p>Directory of sustainable material suppliers in Ghana</p>
+                    <a href="downloads/materials-directory.pdf" class="download-btn" download>
+                        <i class="fas fa-download"></i> Download PDF
+                    </a>
+                </div>
+                
+                <div class="download-card">
+                    <div class="download-icon">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                    </div>
+                    <h4>Cost Estimation Template</h4>
+                    <p>Excel template for estimating sustainable building costs</p>
+                    <a href="downloads/cost-template.xlsx" class="download-btn" download>
+                        <i class="fas fa-download"></i> Download Excel
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Useful Links -->
+        <section class="links-section">
+            <h2>Useful Websites & Organizations</h2>
+            <div class="category-card">
+                <div class="category-icon">
+                    <i class="fas fa-external-link-alt"></i>
+                </div>
+                <h3>Government & Regulatory Bodies</h3>
+                
+                <ul class="resource-list">
+                    <li class="resource-item">
+                        <a href="https://energycom.gov.gh" class="resource-link" target="_blank">
+                            <i class="fas fa-university"></i>
+                            Energy Commission Ghana
+                            <span class="resource-type">Government</span>
+                        </a>
+                    </li>
+                    <li class="resource-item">
+                        <a href="https://www.epa.gov.gh" class="resource-link" target="_blank">
+                            <i class="fas fa-leaf"></i>
+                            Environmental Protection Agency Ghana
+                            <span class="resource-type">Government</span>
+                        </a>
+                    </li>
+                    <li class="resource-item">
+                        <a href="https://ghgbc.org" class="resource-link" target="_blank">
+                            <i class="fas fa-building"></i>
+                            Ghana Green Building Council
+                            <span class="resource-type">Non-Profit</span>
+                        </a>
+                    </li>
+                    <li class="resource-item">
+                        <a href="https://www.gsa.gov.gh" class="resource-link" target="_blank">
+                            <i class="fas fa-archway"></i>
+                            Ghana Standards Authority
+                            <span class="resource-type">Government</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="category-card" style="margin-top: 2rem;">
+                <div class="category-icon">
+                    <i class="fas fa-hands-helping"></i>
+                </div>
+                <h3>Professional Associations & Networks</h3>
+                
+                <ul class="resource-list">
+                    <li class="resource-item">
+                        <a href="https://gh-architects.org" class="resource-link" target="_blank">
+                            <i class="fas fa-users"></i>
+                            Ghana Institute of Architects
+                            <span class="resource-type">Association</span>
+                        </a>
+                    </li>
+                    <li class="resource-item">
+                        <a href="https://ghie.org.gh" class="resource-link" target="_blank">
+                            <i class="fas fa-cogs"></i>
+                            Ghana Institution of Engineers
+                            <span class="resource-type">Association</span>
+                        </a>
+                    </li>
+                    <li class="resource-item">
+                        <a href="#" class="resource-link">
+                            <i class="fas fa-network-wired"></i>
+                            Sustainable Builders Network Ghana
+                            <span class="resource-type">Network</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    How much more does sustainable building cost?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Sustainable building typically costs 5-15% more upfront than conventional construction. However, these costs are usually recovered within 3-7 years through energy and water savings. Many sustainable features have minimal additional costs when integrated during the design phase.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Where can I find sustainable building materials in Ghana?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Many sustainable materials are available locally in Ghana. Bamboo can be sourced from the Eastern and Ashanti regions, compressed earth blocks are manufactured in several locations, and recycled materials are available from waste management companies in major cities. Download our Green Materials Directory for a comprehensive list of suppliers.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    Do I need special permits for solar installations?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>For residential solar systems under 500W, no special permits are required in Ghana. For larger systems or grid-tied installations, you need approval from the Energy Commission and your local electricity distributor (ECG or NEDCo). Our Solar Installation Guide includes all the necessary permit application forms and procedures.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question" onclick="toggleFAQ(this)">
+                    How can I ensure my building stays cool without air conditioning?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Several passive cooling techniques work well in Ghana's climate: proper building orientation (east-west axis), strategic window placement for cross-ventilation, roof overhangs for shading, thermal mass materials (like rammed earth), and green roofs or walls. Our Passive Design Handbook provides detailed guidance on these techniques.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="contact-section">
+            <h2>Request Additional Resources</h2>
+            <p>Can't find what you're looking for? Request specific resources or ask questions</p>
+            
+            <div class="contact-form">
+                <form id="resourceRequestForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="category">Resource Category</label>
+                        <select id="category" required>
+                            <option value="">Select a category</option>
+                            <option value="design">Design Guides</option>
+                            <option value="technical">Technical Tools</option>
+                            <option value="learning">Learning Materials</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="request">What resource are you looking for?</label>
+                        <textarea id="request" rows="4" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="purpose">How will you use this resource?</label>
+                        <select id="purpose" required>
+                            <option value="">Select purpose</option>
+                            <option value="academic">Academic/Research</option>
+                            <option value="professional">Professional Project</option>
+                            <option value="personal">Personal Home Project</option>
+                            <option value="teaching">Teaching/Training</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Submit Request
+                    </button>
+                </form>
+            </div>
+        </section>
+
+        <!-- Newsletter -->
+        <section class="newsletter">
+            <h2>Stay Updated</h2>
+            <p style="color: white;">Subscribe to our newsletter for new resources, updates, and sustainable architecture news in Ghana</p>
+            
+            <form class="newsletter-form" id="newsletterForm">
+                <input type="email" class="newsletter-input" placeholder="Enter your email address" required>
+                <button type="submit" class="newsletter-btn">Subscribe</button>
+            </form>
+            
+            <p style="color: white;"><small>We respect your privacy. Unsubscribe at any time.</small></p>
+        </section>
+
+        <!-- Navigation to Other Pages -->
+        <section class="page-navigation">
+            <h2>Continue Exploring</h2>
+            <div class="nav-buttons">
+                <a href="casestudies.html" class="nav-button">
+                    <i class="fas fa-building"></i>
+                    <span>Case Studies</span>
+                </a>
+                <a href="index.html" class="nav-button">
+                    <i class="fas fa-home"></i>
+                    <span>Back to Home</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h3>EcoArch Ghana</h3>
+                    <p>Providing practical resources for sustainable architecture development in Ghana.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="traditional.html">Traditional Designs</a></li>
+                        <li><a href="modern.html">Modern Innovations</a></li>
+                        <li><a href="casestudies.html">Case Studies</a></li>
+                        <li><a href="resources.html">Resources</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contact Info</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Tesano, Accra, Ghana</li>
+                        <li><i class="fas fa-phone"></i> +233 24 123 4567</li>
+                        <li><i class="fas fa-envelope"></i> resources@ecoarchghana.org</li>
+                        <li><i class="fas fa-clock"></i> Mon-Fri: 9AM-5PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> EcoArch Ghana. IT245 Multimedia & Web Design Project. All rights reserved.</p>
+                <p>Ghana Communication Technology University | Faculty of Computing and Information Systems</p>
+                <p>Resources compiled for educational purposes. All trademarks belong to their respective owners.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Resources page JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set current year
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // FAQ functionality
+            window.toggleFAQ = function(element) {
+                const answer = element.nextElementSibling;
+                const icon = element.querySelector('i');
+                
+                answer.classList.toggle('active');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            };
+            
+            // Form submission handlers
+            const resourceForm = document.getElementById('resourceRequestForm');
+            const newsletterForm = document.getElementById('newsletterForm');
+            
+            resourceForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                // Get form data
+                const formData = {
+                    name: document.getElementById('name').value,
+                    email: document.getElementById('email').value,
+                    category: document.getElementById('category').value,
+                    request: document.getElementById('request').value,
+                    purpose: document.getElementById('purpose').value
+                };
+                
+                // Show success message (in a real app, this would send to a server)
+                alert('Thank you for your resource request! We will email you within 2-3 business days.');
+                resourceForm.reset();
+            });
+            
+            newsletterForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = this.querySelector('input[type="email"]').value;
+                
+                // Show success message
+                alert(`Thank you for subscribing with ${email}! You will receive our next newsletter.`);
+                newsletterForm.reset();
+            });
+            
+            // External link warning
+            document.querySelectorAll('a[target="_blank"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if(!confirm('You are leaving our website. Continue to ' + this.hostname + '?')) {
+                        e.preventDefault();
+                    }
+                });
+            });
+            
+            // Create downloads folder structure note
+            console.log('For downloads to work, create this folder structure:');
+            console.log('project-folder/');
+            console.log('├── downloads/');
+            console.log('│   ├── sustainability-checklist.pdf');
+            console.log('│   ├── solar-guide.pdf');
+            console.log('│   ├── materials-directory.pdf');
+            console.log('│   └── cost-template.xlsx');
+            console.log('└── ...');
+        });
+    </script>
+</body>
+</html>
